@@ -1,95 +1,130 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
-
+%-------------------------
+% Resume Template
+% Author : Orest Tokovenko
+% Github : https://github.com/oresttokovenko
+% License : MIT
+% Type: Junior Developer/CS Student
+%------------------------
 
 %-------------------------------------------------------------------------------
-% CONFIGURATIONS
+%                Document & Class
 %-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, letterpaper]{awesome-cv}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\documentclass[letterpaper]{resume_config}
 
-% Specify the location of the included fonts
-\fontdir[fonts/]
+% NOTE: <- font size adjustment is available in the resume_config.cls file on the left hand side. ex. \LoadClass[#pt]{article} where # is 10, 11 or 12
 
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-\usepackage[none]{hyphenat}
+% NOTE: If you need to adjust the space between any two lines, use this function: \vspace{#pt} where # is your number. ex. \vspace{-5pt} decreases the space between lines
 
 %-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
+%                Resume Starts Here
 %-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{./examples/profile}
-\name{Vishnu}{Satish}
-\position{Software Developer{\enskip\cdotp\enskip}Competitive Programmer{\enskip\cdotp\enskip}Grade 12 Student}
 
-\mobile{(437) 488-3041}
-\email{contact@vishnus.me}
-\homepage{www.vishnus.me}
-\github{vishnupsatish}
-\linkedin{vishnupsatish}
-
-
-%-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+\Header
+    {Karthik Sabhanayakam} % name
+    {Fremont, CA} % city, province
+    {karsab343@gmail.com} % email
+    {kach0w} % https://linkedin.com/in/_______
+    {kach0w} % https://github.com/_______
+    {www.kach0w.com} % website - this parameter is optional, removing it won't impact the function's behavior
+%-------------------------------------------------------------------------------
+%                Education
+%-------------------------------------------------------------------------------
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
-  {2022}
-  {Vishnu Satish~~~·~~~Resume}
-  {\thepage}
+\section{Education}
 
+\EducationExperience
+    {Basis Independent Silicon Valley} % school name
+    {San Jose, CA}
+    {Relevant Coursework: AP Computer Science Principles [5], AP Calculus AB [5], AP Physics 1 [4], \\AP Macroeconomics [5], AP Microeconomics [5], AP Calculus BC [5], AP Physics 2 [5], AP Statistics [5]} % credential name
+    {Class of 2025} % date of graduation
+    {3.97 GPA} % city, country of school
+    \vspace{4pt}
+\vspace{-14pt}
 
 %-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
+%                Work Experience
 %-------------------------------------------------------------------------------
-\input{resume/summary.tex}
-\input{resume/experience.tex}
-\input{resume/honors.tex}
-\input{resume/skills.tex}
-\input{resume/education.tex}
-\input{resume/references.tex}
 
+\section{Work Experience}
+
+\WorkExperience
+    {Software Engineer} % job title
+    {Rate My AP's} % company name
+    {May 2023 -- Present} % beginning and end of employment. If currently employed write " - Present"
+    {Remote} % city, country of employment
+    {
+        \item Designed and developed a scalable backend with NodeJS that efficiently handles user requests for voting and authentication with Firebase
+        \item Utilized a stack of a NodeJS backend with Firebase connecting to a NextJS frontend
+        \item Handled the voting software that made sure that logged in users could only vote once for each of their AP's
+        \item Connected course resources and interviews with the Google Forms API so that people who took courses could provided feeback and advice
+        \item Used technologies like Vercel and GitHub to deploy the app to the web
+    }
+
+\vspace{-10pt}
+%-------------------------------------------------------------------------------
+%                Projects
+%-------------------------------------------------------------------------------
+
+\section{Projects}
+
+\Project
+    {Classic Rock Radio} % project name
+    {NodeJS, React, Express} % technologies
+    {kach0w/classic-rock-radio} % https://github.com/____/____
+    {
+        \item Developed a full-stack web application using with NodeJS serving a REST API with React as the frontend
+        \item Helps out people who enjoy classic rock find radio stations near them
+        \item Utilized web scrapping, scraps around ~50 pages of Wikipedia articles to find FCC registered radio stations
+    }
+
+\Project
+    {Positivity Bot} % project name
+    {JavaScript, NodeJS, DiscordJS, ML} % technologies
+    {kach0w/positivity-bot} % https://github.com/____/____
+    {
+        \item Developed a Discord bot using DiscordJS and NodeJS
+        \item Uses machine learning techniques like sentiment analysis to check whether a users messages have been leaning positive or negative
+        \item Uses various REST APIs to assist with detection and also administrative actions
+        \item Uses ChatGPT to provide a list of resources that might make the user a more positive influence on a Discord community 
+    }
+
+\vspace{-8pt}
+%-------------------------------------------------------------------------------
+%                Certifications
+%-------------------------------------------------------------------------------
+
+\section{Certifications}
+\vspace{2pt}
+
+\Certification
+    {Intro to Machine Learning} % credential name
+    {Kaggle} % issuing institution
+    {July 2023} % date of completion
+\Certification
+    {Python for Data Science} % credential name
+    {Sololearn} % issuing institution
+    {September 2022} % date of completion
+\vspace{-7pt}
 
 %-------------------------------------------------------------------------------
+%                Skills
+%-------------------------------------------------------------------------------
+
+\section{Skills}
+
+\vspace{1pt}
+
+\SkillList{
+    \SkillItem{Languages}{: Java, Javascript, Python}
+    \SkillItem{Frameworks}{: ExpressJS, NextJS, React}
+    \SkillItem{Databases}{: MongoDB, Firebase}
+}
+
 \end{document}
+
+%-------------------------------------------------------------------------------
+%                Resume Ends Here
+%-------------------------------------------------------------------------------
